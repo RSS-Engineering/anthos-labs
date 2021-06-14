@@ -34,25 +34,23 @@ general_labels = {
 }
 
 primary_vpc = {
-  name                                  = "anthos-primary"
-  description                           = "anthos-primary"
-  cidr_block                            = "10.0.0.0/16"
-  cidr_subnetwork_width_delta           = 4
-  cidr_subnetwork_spacing               = 0
-  secondary_cidr_block                  = "10.1.0.0/16"
-  secondary_cidr_subnetwork_width_delta = 4
-  secondary_cidr_subnetwork_spacing     = 0
+  name             = "primary"
+  description      = "primary"
+  public_general   = "10.0.0.0/20"
+  public_services  = "10.0.16.0/20"
+  pod_services     = "10.0.32.0/20"
+  private_general  = "10.0.48.0/20"
+  private_services = "10.0.64.0/20"
 }
 
 secondary_vpc = {
-  name                                  = "anthos-primary"
-  description                           = "anthos-primary"
-  cidr_block                            = "10.2.0.0/16"
-  cidr_subnetwork_width_delta           = 4
-  cidr_subnetwork_spacing               = 0
-  secondary_cidr_block                  = "10.3.0.0/16"
-  secondary_cidr_subnetwork_width_delta = 4
-  secondary_cidr_subnetwork_spacing     = 0
+  name             = "secondary"
+  description      = "secondary"
+  public_general   = "10.1.0.0/20"
+  public_services  = "10.1.16.0/20"
+  pod_services     = "10.1.32.0/20"
+  private_general  = "10.1.48.0/20"
+  private_services = "10.1.64.0/20"
 }
 
 vcp_flow_log_config = {
