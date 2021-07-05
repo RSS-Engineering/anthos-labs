@@ -20,9 +20,15 @@ gcp_service_list = [
   "gkeconnect.googleapis.com",
   "gkehub.googleapis.com",
   "monitoring.googleapis.com",
-  "logging.googleapis.com"
-
+  "logging.googleapis.com",
+  "stackdriver.googleapis.com",
+  "serviceusage.googleapis.com",
+  "storage-api.googleapis.com",
+  "storage-component.googleapis.com",
 ]
+
+
+
 
 general_labels = {
   "environment"       = "anthos-lab-test"
@@ -93,4 +99,29 @@ gke_machine_type = "n1-standard-1"
 ## SSH
 ssh_key_name   = "sri-mb"
 ssh_key_public = "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA8qZ1W3X+VFSoK8741Pew4B8v7MOhJE9nDAAdMMtzs1xeAmlqs09kqjyIAvRsoeKL/qrLQE2nE/JRpkCOXf99MhdQIeJwXFj3lb1SdIsP7cDuLbtl95EygSjSf5ip+pswJl9BeKRvOPpu5ksX1okoSvXGj2LaTLsFZ1hkzf0S7OHycHRHgpb5v5flzVvCCyW9Vh5WjZHOh8QnNoNWhlA9ljLt/nOIveALxHbHitbX7zirVC0DQqVhwC1d1pHeIbFpLgLoDQV8vghRWyPjPnfS8AyFTs2CEzAnm6UtCEO/Vw1s/UTm9/qHUNS5cRvCn783rvFPQ6motglazv9igvF7cQ=="
+
+## ACM
+
+primary_acm = {
+  repo = "https://github.com/RSS-Engineering/anthos-labs/"
+  branch = "main"
+  dir = "acm/primary"
+}
+
+
+secondary_acm = {
+  repo = "https://github.com/RSS-Engineering/anthos-labs/"
+  branch = "main"
+  dir = "acm/secondary"
+}
+
+
+## AWS
+
+aws_primary_region = "us-east-2"
+aws_vpc_name = "anthos-vpc"
+aws_vpc_az_count = "2"
+aws_vpc_cidr            = "172.28.0.0/20"
+aws_private_cidr_ranges = ["172.28.0.0/23", "172.28.2.0/23"]
+aws_public_cidr_ranges  = ["172.28.4.0/23", "172.28.6.0/23"]
 

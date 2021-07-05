@@ -1,4 +1,5 @@
-## General
+### General
+
 variable "gcp_service_list" {
   description = "GCP project services"
   type        = list
@@ -29,13 +30,22 @@ variable "secondary_zones" {
   type        = list
 }
 
-
 variable "general_labels" {
   description = "General Labels"
   type        = map
 }
 
-## VPC
+variable "ssh_key_name" {
+  description = "SSH Key name in AWS"
+  type        = string
+}
+variable "ssh_key_public" {
+  description = "SSH Public key"
+  type        = string
+}
+
+### VPC
+
 # Primary VPC
 variable "primary_vpc" {
   description = "All VPC Variables"
@@ -53,7 +63,7 @@ variable "vcp_flow_log_config" {
   type        = map
 }
 
-## Bastion
+### Bastion
 variable "bastion_instance_type" {
   description = "Bastion Instance type"
   type        = string
@@ -74,7 +84,7 @@ variable "bastion_zone" {
   type        = string
 }
 
-## GKE
+### GKE
 variable "gke_cluster_name" {
   description = "EKS cluster name"
   type        = string
@@ -127,12 +137,45 @@ variable "gke_machine_type" {
   type        = string
 }
 
-# SSH
-variable "ssh_key_name" {
-  description = "SSH Key name in AWS"
+### ASM
+variable "primary_acm" {
+  description = "ACM repo"
+  type = map
+}
+variable "secondary_acm" {
+  description = "ACM repo"
+  type = map
+}
+
+
+### AWS
+
+# VPC
+
+
+variable "aws_primary_region" {
+  description = "Primary Region"
   type        = string
 }
-variable "ssh_key_public" {
-  description = "SSH Public key"
+
+variable "aws_vpc_name" {
+  description = "VPC details"
   type        = string
 }
+variable "aws_vpc_az_count" {
+  description = "VPC details"
+  type        = string
+}
+variable "aws_vpc_cidr" {
+  description = "VPC details"
+  type        = string
+}
+variable "aws_private_cidr_ranges" {
+  description = "VPC details"
+  type        = list
+}
+variable "aws_public_cidr_ranges" {
+  description = "VPC details"
+  type        = list
+}
+
